@@ -1,0 +1,39 @@
+ls
+-l
+total 320
+-rwxr-xr-x    1 mcastres  2016_paris  35532 Apr 28 13:47 21sh
+drwxr-xr-x    3 mcastres  2016_paris    102 Apr 24 11:06 21sh.dSYM
+-rw-r--r--    1 mcastres  2016_paris   2132 Apr 27 14:11 Makefile
+-rw-r--r--    1 mcastres  2016_paris    840 Apr 28 13:47 ft_21sh.o
+-rw-r--r--    1 mcastres  2016_paris   2840 Apr 28 13:47 ft_arrow_key.o
+-rw-r--r--    1 mcastres  2016_paris   3000 Apr 28 13:47 ft_cd.o
+-rw-r--r--    1 mcastres  2016_paris   1004 Apr 28 13:47 ft_cd_error.o
+-rw-r--r--    1 mcastres  2016_paris   1804 Apr 28 13:47 ft_change_home_sign.o
+-rw-r--r--    1 mcastres  2016_paris   1968 Apr 28 13:47 ft_commande.o
+-rw-r--r--    1 mcastres  2016_paris   1068 Apr 28 13:47 ft_echo.o
+-rw-r--r--    1 mcastres  2016_paris   1636 Apr 28 13:47 ft_env.o
+-rw-r--r--    1 mcastres  2016_paris   3180 Apr 28 13:47 ft_exec_commande.o
+-rw-r--r--    1 mcastres  2016_paris    740 Apr 28 13:47 ft_exit.o
+-rw-r--r--    1 mcastres  2016_paris    712 Apr 28 13:47 ft_find_last_pwd.o
+-rw-r--r--    1 mcastres  2016_paris    756 Apr 28 13:47 ft_get_pwd.o
+-rw-r--r--    1 mcastres  2016_paris   2688 Apr 28 13:47 ft_init_term.o
+-rw-r--r--    1 mcastres  2016_paris   1588 Apr 28 13:47 ft_lst_history.o
+-rw-r--r--    1 mcastres  2016_paris    892 Apr 28 13:47 ft_ltos.o
+-rw-r--r--    1 mcastres  2016_paris   2284 Apr 28 13:47 ft_pipette.o
+-rw-r--r--    1 mcastres  2016_paris   1592 Apr 28 13:47 ft_prepare_cd.o
+-rw-r--r--    1 mcastres  2016_paris   1276 Apr 28 13:47 ft_print_char.o
+-rw-r--r--    1 mcastres  2016_paris   1144 Apr 28 13:47 ft_prompt.o
+-rw-r--r--    1 mcastres  2016_paris   2468 Apr 28 13:47 ft_quote.o
+-rw-r--r--    1 mcastres  2016_paris   2764 Apr 28 13:47 ft_read_commande.o
+-rw-r--r--    1 mcastres  2016_paris   2048 Apr 28 13:47 ft_realloc.o
+-rw-r--r--    1 mcastres  2016_paris   2196 Apr 28 13:47 ft_redirection.o
+-rw-r--r--    1 mcastres  2016_paris    924 Apr 28 13:47 ft_strtrimb.o
+-rw-r--r--    1 mcastres  2016_paris   1360 Apr 28 13:47 ft_termcap_delete.o
+-rw-r--r--    1 mcastres  2016_paris   2096 Apr 28 13:47 ft_trim.o
+drwxr-xr-x    3 mcastres  2016_paris    102 Apr 20 13:04 includes
+drwxr-xr-x  177 mcastres  2016_paris   6018 Apr 28 13:47 libft
+-rw-r--r--    1 mcastres  2016_paris    704 Apr 28 13:47 main.o
+-rw-r--r--    1 mcastres  2016_paris      6 Apr 28 14:09 p
+drwxr-xr-x   29 mcastres  2016_paris    986 Apr 27 14:12 srcs
+-rw-r--r--    1 mcastres  2016_paris     10 Apr 28 14:09 test
+-rw-r--r--    1 mcastres  2016_paris    426 Apr 28 13:43 y

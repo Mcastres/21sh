@@ -6,7 +6,7 @@
 /*   By: mcastres <mcastres@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 11:46:42 by mcastres          #+#    #+#             */
-/*   Updated: 2017/04/20 13:08:35 by mcastres         ###   ########.fr       */
+/*   Updated: 2017/04/28 13:35:35 by mcastres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,27 @@ static int		do_pipe(char ***commands, t_shell **shell, int fd_in)
 	return (1);
 }
 
-int		parse_pipe(char **commands, t_shell **shell)
+// static char		**parse_redirect(char ***commands, int n)
+// {
+// 	char	**hamza;
+// 	int		i;
+//
+// 	i = -1;
+// 	hamza = NULL;
+// 	while (commands[n][++i])
+// 	{
+// 		if (ft_strcmp(commands[n][i], ">") != 0
+// 		&& ft_strcmp(commands[n][i], "<") != 0
+// 		&& ft_strcmp(commands[n][i], ">>") != 0
+// 		&& ft_strcmp(commands[n][i], "<<") != 0)
+// 			hamza = ft_tabpushback(hamza, commands[n][i]);
+// 		else
+// 			break;
+// 	}
+// 	return (hamza);
+// }
+
+static int		parse_pipe(char **commands, t_shell **shell)
 {
 	t_shell			*s;
 	char			***pipe;
@@ -95,6 +115,8 @@ int		parse_pipe(char **commands, t_shell **shell)
 		temp = NULL;
 		while (commands[i] && ft_strcmp(commands[i], "|") != 0)
 		{
+			if (ft_strcmp(commands[i], ">") == 0)
+				break ;
 			temp = ft_tabpushback(temp, commands[i]);
 			i++;
 		}
@@ -102,6 +124,8 @@ int		parse_pipe(char **commands, t_shell **shell)
 		if (commands[i])
 			i++;
 	}
+	// pipe[0] = ft_tabdup(parse_redirect(pipe, 0));
+	// pipe[1] = ft_tabdup(parse_redirect(pipe, 1));
 	do_pipe(pipe, &s, 0);
 	ft_freetabb(pipe, ft_tabblen(pipe));
 	return (1);

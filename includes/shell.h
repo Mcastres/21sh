@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   shell.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmadad <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: hmadad <hmadad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 14:43:05 by hmadad            #+#    #+#             */
-/*   Updated: 2017/04/20 13:04:25 by mcastres         ###   ########.fr       */
+/*   Updated: 2017/04/27 14:56:14 by mcastres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@
 # define WHT   "\x1B[37m"
 # define RESET "\x1B[0m"
 
+# define STDIN 0
+# define STDOUT 1
+# define STDERR 2
+
 typedef struct	s_shell
 {
 	int					s_h;
@@ -52,6 +56,13 @@ typedef struct		s_history
 
 }					t_history;
 
+void			ft_process(t_shell **shell);
+int				is_redirection(char **commands);
+int				do_redirection(char **commands, t_shell **shell);
+void 			ft_doquote(t_shell **shell);
+void 			ft_dodquote(t_shell **shell);
+int 			ft_dquote(char *str);
+int 			ft_quote(char *str);
 int				is_pipe(char **commands, t_shell **shell);
 int				ft_21sh(char ***env);
 t_history		*ft_init_term(t_shell **shell);

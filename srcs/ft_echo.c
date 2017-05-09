@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_echo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmadad <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: hmadad <hmadad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/03 11:21:14 by hmadad            #+#    #+#             */
-/*   Updated: 2017/04/19 12:49:33 by hmadad           ###   ########.fr       */
+/*   Updated: 2017/04/25 13:00:39 by mcastres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void		ft_echo(char **opt, char ***g_env)
 {
+	char	*temp;
 	int		i;
 
 	i = 1;
@@ -28,7 +29,11 @@ void		ft_echo(char **opt, char ***g_env)
 					ft_putstr(opt[i]);
 			}
 			else
-				ft_putstr(opt[i]);
+			{
+				temp = ft_escapequote(opt[i]);
+				ft_putstr(temp);
+				ft_strdel(&temp);
+			}
 			ft_putchar(' ');
 			i++;
 		}

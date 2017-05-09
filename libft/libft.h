@@ -6,7 +6,7 @@
 /*   By: hmadad <hmadad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 08:03:51 by hmadad            #+#    #+#             */
-/*   Updated: 2017/04/20 12:56:07 by mcastres         ###   ########.fr       */
+/*   Updated: 2017/04/25 12:59:34 by mcastres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ typedef struct	s_list
 }				t_list;
 
 
+void			ft_tabtospace(char *str);
+char			*ft_escapequote(char const *s);
+char			*ft_strtrim_c(char const *s, char c);
 void			ft_strtabb(char ***tab);
 char			**ft_tabcreate(char *content);
 char			**ft_tabpushback(char **tab, char *content);

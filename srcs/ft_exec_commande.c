@@ -6,7 +6,7 @@
 /*   By: hmadad <hmadad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 12:39:10 by hmadad            #+#    #+#             */
-/*   Updated: 2017/04/20 13:12:21 by mcastres         ###   ########.fr       */
+/*   Updated: 2017/04/28 13:20:13 by mcastres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,10 @@ void	ft_process2(t_shell **shell, char *commande)
 	while ((s->all)[i])
 	{
 		s->opt = ft_strsplit(s->all[i], ' ');
-		if (!is_pipe(s->opt, &s))
+
+		if (is_redirection(s->opt))
+			do_redirection(s->opt, &s);
+		if (!is_pipe(s->opt, &s) && !is_redirection(s->opt))
 		{
 			tmp = ft_strtrim((s->all)[i]);
 			if (!(commande = ft_strbchr(tmp, ' ')))

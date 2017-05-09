@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hmadad <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: hmadad <hmadad@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/12 14:56:33 by hmadad            #+#    #+#              #
-#    Updated: 2017/04/20 13:05:34 by mcastres         ###   ########.fr        #
+#    Updated: 2017/04/28 14:13:41 by mcastres         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,20 @@ SRCS_NAME = ft_21sh.c \
 			ft_trim.c \
 			ft_get_pwd.c \
 			ft_pipette.c \
+			ft_quote.c \
+			ft_redirection.c \
 			main.c \
+
+# COLORS
+C_NO =	"\033[00m"
+C_OK =	"\033[35m"
+C_GOOD = "\033[32m"
+C_ERROR = "\033[31m"
+C_WARN = "\033[33m"
+
+# DBG MESSAGE
+SUCCESS	= $(C_GOOD)SUCCESS$(C_NO)
+OK = $(C_OK)OK$(C_NO)
 
 SRC = $(addprefix $(SRC_PATH)/, $(SRCS_NAME))
 
@@ -52,16 +65,18 @@ $(NAME):
 	@make -C ./libft
 	@gcc $(FLAGS) -I ./includes -c $(SRC)
 	@gcc -o $(NAME) -lreadline -ltermcap $(OBJECTS) -lft -L libft
+	@clear
+	@echo "Compiling" [$(NAME)] $(SUCCESS)
 
 .PHONY: clean
 clean:
 	@rm -f $(OBJECTS)
 	@make clean -C ./libft
-	@echo "objects files deleted"
+	@echo "Cleaning" [$(NAME)] "..." $(OK)
 
 fclean: clean
 	@rm -f $(NAME)
 	@make fclean -C ./libft
-	@echo "minishell deleted"
+	@echo "Delete" [$(NAME)] $(OK)
 
 re: fclean all

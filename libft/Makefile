@@ -6,7 +6,7 @@
 #    By: hmadad <hmadad@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 11:04:43 by hmadad            #+#    #+#              #
-#    Updated: 2017/04/20 12:56:38 by mcastres         ###   ########.fr        #
+#    Updated: 2017/04/25 13:00:37 by mcastres         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,6 +94,9 @@ SRCS = ft_memset.c \
 	ft_tabcreate.c \
 	ft_strtabb.c \
 	ft_freetab.c \
+	ft_strtrim_c.c \
+	ft_escapequote.c \
+	ft_tabtospace.c \
 
 OBJECTS = $(SRCS:.c=.o)
 

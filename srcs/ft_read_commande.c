@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_read_commande.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmadad <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: hmadad <hmadad@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/14 17:00:05 by hmadad            #+#    #+#             */
-/*   Updated: 2017/04/19 15:34:39 by hmadad           ###   ########.fr       */
+/*   Updated: 2017/04/27 12:01:56 by mcastres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_update_history(t_shell **shell)
 			ft_putendl_fd(s->line, fd);
 			close(fd);
 		}
-		ft_liste_push_front(&(s->history), ft_listenew(s->line));
+		ft_liste_push_front(&(s->history), ft_listenew(s->line));		//Ici
 		ft_strdel(&tmp);
 	}
 }
@@ -68,6 +68,13 @@ void	ft_read_commande(t_shell **shell)
 		if (ft_strcmp(buf, "\n") == 0)
 		{
 			ft_putchar('\n');
+			if (s->line)
+			{
+				if (ft_dquote(s->line))
+					ft_dodquote(&s);
+				else if (ft_quote(s->line))
+					ft_doquote(&s);
+			}
 			ft_update_history(&s);
 			ft_exec_commande(shell);
 			ft_strdel(&(s->line));
